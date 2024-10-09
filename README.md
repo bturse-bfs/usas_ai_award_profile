@@ -27,6 +27,6 @@ You can use the API to download all information about a specific award by ID.
    - Save and run the code snippet. This should download all relevant information about the award to a zip package on the client machine.
 
 ## Other Useful Information
-(**Please complete the USAspending API developer survey!!**)[https://forms.office.com/Pages/ResponsePage.aspx?id=is1pDRKeIU2V8LRAbgZxCosrFrEyW1NFiLX9Wji-iCxUQ0FHNlZMRFdCVlcyQ0VKVFNGOVRDR0lJUi4u]
+[**Please complete the USAspending API developer survey!!**](https://forms.office.com/Pages/ResponsePage.aspx?id=is1pDRKeIU2V8LRAbgZxCosrFrEyW1NFiLX9Wji-iCxUQ0FHNlZMRFdCVlcyQ0VKVFNGOVRDR0lJUi4u)
 
 Developers are strongly encouraged to develop solutions that could satisfy Treasury Department cloud security policy. For example, teams can use models available through [Amazon Bedrock](https://aws.amazon.com/bedrock/) to help ensure solutions meet these requirements.
