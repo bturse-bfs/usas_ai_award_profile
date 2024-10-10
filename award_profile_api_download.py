@@ -1,13 +1,19 @@
+import os
 import requests
 from time import sleep
 from zipfile import ZipFile
 from io import BytesIO
 import logging
 
-logger = logging.getLogger(__name__)
+# update AWARD_ID
+AWARD_ID = "ASST_NON_1905CA5MAP_7530"
 
-# update award_id
-award_id = "ASST_NON_1905CA5MAP_7530"
+logging.basicConfig(
+    filename="log",
+    filemode="a",
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+)
 
 
 def initiate_award_profile_download(award_id: str) -> dict:
@@ -48,7 +54,7 @@ def wait_and_download_file(download_initiation_response: dict) -> None:
     """
     status_url = download_initiation_response["status_url"]
     status_response = requests.get(status_url).json()
-    logger.info(status_url)
+    logging.info(f"Download status URL: {status_url}")
 
     while status_response["status"] in ("ready", "running"):
         status_response = requests.get(status_url).json()
@@ -57,8 +63,10 @@ def wait_and_download_file(download_initiation_response: dict) -> None:
     if status_response["status"] == "finished":
         r = requests.get(status_response["file_url"])
         z = ZipFile(BytesIO(r.content))
-        z.extractall(status_response["file_name"])
+        output_dir = "usas_data"
+        os.makedirs(output_dir, exist_ok=True)
+        z.extractall(path=f"{output_dir}/{status_response['file_name']}")
 
 
 if __name__ == "__main__":
-    wait_and_download_file(initiate_award_profile_download(award_id))
+    wait_and_download_file(initiate_award_profile_download(AWARD_ID))
