@@ -28,7 +28,7 @@ You can use the API to download all information about a specific award by ID.
     - Click the Prime Award ID in the Prime Award Results table to navigate to the award’s profile page.
     - Copy the last bit of the award profile page URL. This is the award id. Examples: `CONT_AWD_DEAC2701RV14136_8900_-NONE-_-NONE-`, `CONT_IDV_NNJ16GX08B_8000`, `ASST_NON_2105CA5MAP_7530`
 2. Initate a download and receive data
-   - update [`award_id` on award_profile_api_download.py](https://github.com/bturse-bfs/usas_ai_award_profile/blob/f39e56ee76f63b394038a2629228e16889b44e84/award_profile_api_download.py#L9)
+   - update [`award_id` on award_profile_api_download.py](https://github.com/bturse-bfs/usas_ai_award_profile/blob/af6437d575199fbb55af7d73ef0a1e85540e2871/award_profile_api_download.py#L9)
    - Save and run the code snippet. This should download all relevant information about the award to a zip package on the client machine.
 
 
